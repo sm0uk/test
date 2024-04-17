@@ -1,0 +1,4 @@
+.error{color: red;padding: 20px 0;}
+.message{color: green;padding: 20px 0;}
+.lang-item{display: inline-block;padding: 5px; margin: 10px 0 20px; color: #333; border: 1px dotted #333;}
+.lang-item.active{ color: #D16712; border-color: #D16712;}

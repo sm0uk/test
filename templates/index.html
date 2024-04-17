@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/form.css">
+    <title>{{ dictionary['title'] }}</title>
+</head>
+<body>
+<div class="container">
+    <a href="/?lang=en" class="lang-item{% if lang =='en' %} active{% endif %}">En</a>
+    <a href="/?lang=ru" class="lang-item{% if lang=='ru' %}  active{% endif %}">Ru</a>
+    <form class="form" method="post">
+        {% if message|length > 0 %}
+            <div class="message">{{ message }}</div>
+        {% endif %}
+
+        {% if error|length > 0 %}
+            <div class="error">{{ error }}</div>
+        {% endif %}
+        <fieldset>
+            <input type="text" name="name" value="{{ form['name'] }}" placeholder="{{ dictionary['name'] }}" required >
+            <input type="email" name="email" value="{{ form['email'] }}" placeholder="{{ dictionary['email'] }}" required >
+            <input type="text" name="phone" value="{{ form['phone'] }}" placeholder="{{ dictionary['phone'] }}" required >
+            <input type="submit" value="{{ dictionary['save'] }}">
+        </fieldset>
+    </form>
+</div>
+</body>
+</html>
